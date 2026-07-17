@@ -1,18 +1,18 @@
 import { createClient } from "@supabase/supabase-js";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
 
 /**
  * Verejný Supabase klient pre prehliadač.
- * Používa publishable (anon) kľúč — bezpečný pre klienta.
+ * Používa publishable kľúč (sb_publishable_…) — bezpečný pre klienta.
  * Zápis do tabuľky `waitlist` je povolený cez RLS politiku (len INSERT).
  */
 export const supabase =
-  supabaseUrl && supabaseAnonKey
-    ? createClient(supabaseUrl, supabaseAnonKey, {
+  supabaseUrl && supabaseKey
+    ? createClient(supabaseUrl, supabaseKey, {
         auth: { persistSession: false },
       })
     : null;
 
-export const isSupabaseConfigured = Boolean(supabaseUrl && supabaseAnonKey);
+export const isSupabaseConfigured = Boolean(supabaseUrl && supabaseKey);
