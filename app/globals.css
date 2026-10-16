@@ -1126,21 +1126,6 @@ section {
   margin: 12px 0 0;
 }
 
-/* Waitlist position badge */
-.position-badge {
-  display: inline-block;
-  background: rgba(255, 255, 255, 0.16);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: var(--radius);
-  padding: 6px 16px;
-  font-size: 1rem;
-  color: var(--dark-ink);
-  margin-top: 4px;
-}
-.position-badge b {
-  font-size: 1.1rem;
-}
-
 /* v2 responsive */
 @media (max-width: 900px) {
   .hero-grid {
