@@ -1,5 +1,4 @@
 import WaitlistForm from "@/components/WaitlistForm";
-import WaitlistCount from "@/components/WaitlistCount";
 import Calculator from "@/components/Calculator";
 import {
   DashboardMock,
@@ -53,7 +52,6 @@ export default function Home() {
                   Pozrieť funkcie
                 </a>
               </div>
-              <WaitlistCount />
             </div>
             <div className="hero-visual">
               <DashboardMock />

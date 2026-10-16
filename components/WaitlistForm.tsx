@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { supabase, isSupabaseConfigured } from "@/lib/supabaseClient";
-import { waitlistPosition } from "@/lib/waitlist";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -14,7 +13,6 @@ export default function WaitlistForm() {
   const [organization, setOrganization] = useState("");
   const [note, setNote] = useState("");
   const [status, setStatus] = useState<Status>("idle");
-  const [position, setPosition] = useState<number | null>(null);
   const [error, setError] = useState("");
 
   async function handleSubmit(e: React.FormEvent) {
@@ -54,7 +52,6 @@ export default function WaitlistForm() {
       return;
     }
 
-    setPosition(waitlistPosition());
     setStatus("success");
   }
 
@@ -68,12 +65,7 @@ export default function WaitlistForm() {
           <h3 style={{ margin: "0 0 6px", color: "#fff" }}>
             Ste v poradovníku!
           </h3>
-          {position && (
-            <div className="position-badge">
-              Vaše poradie: <b>{position}.</b>
-            </div>
-          )}
-          <p style={{ margin: "10px 0 0", color: "#c7ebe6" }}>
+          <p style={{ margin: "10px 0 0", color: "var(--dark-muted)" }}>
             Ďakujeme. Ozveme sa vám hneď, ako spustíme prístup — budete medzi
             prvými, kto kartio vyskúša.
           </p>
