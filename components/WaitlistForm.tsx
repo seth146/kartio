@@ -73,7 +73,7 @@ export default function WaitlistForm() {
               Vaše poradie: <b>{position}.</b>
             </div>
           )}
-          <p style={{ margin: "10px 0 0", color: "#c7ebe6" }}>
+          <p style={{ margin: "10px 0 0", color: "var(--dark-muted)" }}>
             Ďakujeme. Ozveme sa vám hneď, ako spustíme prístup — budete medzi
             prvými, kto kartio vyskúša.
           </p>
